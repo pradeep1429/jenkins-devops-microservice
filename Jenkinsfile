@@ -3,25 +3,36 @@ pipeline {
         stages{
             stage('Build'){
                 steps{
-                    echo "Build"
-                    echo "PrepareTests"
+                    echo "Prepare Tests to run"
                 }
             }
             stage('RunTests'){
                 steps{
-                    echo "PrepareTests"
+                    echo "Run tests"
                 }
             }
             stage('PublishReports'){
                 steps{
-                    echo "PublishReports"
+                    echo "Publish Reports"
                 }
             }
             stage('AggregateReports'){
                 steps{
-                    echo "AggregateReports"
+                    echo "Aggregate Reports"
                 }
             }
+        }
+        post{
+            always{
+              echo 'this print always'
+            }
+            success{
+              echo 'BUILD SUCCESS'
+            }
+            always{
+              echo 'BUILD FAILURE'
+            }
+
         }
 
 
