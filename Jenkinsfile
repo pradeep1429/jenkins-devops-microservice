@@ -29,7 +29,7 @@ pipeline {
             success{
               echo 'BUILD SUCCESS'
             }
-            always{
+            failure{
               echo 'BUILD FAILURE'
             }
 
