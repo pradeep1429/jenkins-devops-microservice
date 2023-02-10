@@ -1,5 +1,7 @@
 pipeline {
     //agent any
+    sudo systemctl status docker
+    sudo systemctl start docker
     agent{docker{image 'maven:3.6.3'}}
         stages{
             stage('Build'){
